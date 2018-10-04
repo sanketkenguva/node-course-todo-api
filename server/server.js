@@ -47,13 +47,13 @@ app.get('/todos/:id', (req, res) => {
             // if no todo - send back 404 with empty body
         // error
             // 400 - send empty body back
-    Todo.find({_id: id}).then((todo)=> {        
+    Todo.findById({_id: id}).then((todo)=> {        
         if(!todo) {
             res.status(404).send();
         }                
         res.send({todo});
-    }, (e) => {
-        res.status(400).send(e);
+    }).catch((e) => {
+        res.status(400).send();
     });
 });
 
