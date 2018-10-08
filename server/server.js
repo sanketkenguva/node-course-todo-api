@@ -1,3 +1,6 @@
+require('./config/config');
+console.log('env *****', env);
+
 const _ = require('lodash');
 var express = require('express');
 var bodyParser = require('body-parser');
